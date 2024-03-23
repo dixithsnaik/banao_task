@@ -24,9 +24,7 @@ class _HomeState extends State<Home> {
   var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width > 400 ? 360 : size.width,
       child: Scaffold(
         bottomNavigationBar: BottomNavBar(
           ontap: (p0) {
