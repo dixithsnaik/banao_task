@@ -37,7 +37,9 @@ class _HomeState extends State<Home> {
           selectedIndex: selectedIndex,
         ),
       ),
-      body: tabs[selectedIndex],
+      body: SizedBox(
+          width: size.width > 400 ? 360 : size.width,
+          child: tabs[selectedIndex]),
     );
   }
 }
