@@ -25,10 +25,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      bottomNavigationBar: SizedBox(
-        width: size.width > 400 ? 360 : size.width,
-        child: BottomNavBar(
+    return SizedBox(
+      width: size.width > 400 ? 360 : size.width,
+      child: Scaffold(
+        bottomNavigationBar: BottomNavBar(
           ontap: (p0) {
             setState(() {
               selectedIndex = p0;
@@ -36,11 +36,9 @@ class _HomeState extends State<Home> {
           },
           selectedIndex: selectedIndex,
         ),
-      ),
-      body: Center(
-        child: SizedBox(
-            width: size.width > 400 ? 360 : size.width,
-            child: tabs[selectedIndex]),
+        body: Center(
+          child: tabs[selectedIndex],
+        ),
       ),
     );
   }
