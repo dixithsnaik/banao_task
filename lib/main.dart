@@ -1,4 +1,4 @@
-import 'package:banao_task1/screens/home.dart';
+
 import 'package:banao_task1/widgets/home.dart';
 
 import 'package:flutter/material.dart';
