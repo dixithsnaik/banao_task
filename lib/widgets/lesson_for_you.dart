@@ -25,6 +25,8 @@ class LessonForYou extends StatelessWidget {
                   children: lessons
                       .map(
                         (e) => CustomCard(
+                          isbutton: true,
+                          isIconButton: true,
                           subTitle: e.category,
                           time: "${e.duration} min",
                           title: e.name,

@@ -41,6 +41,8 @@ class AllLessons extends StatelessWidget {
                     (e) => Padding(
                       padding: const EdgeInsets.only(bottom: 16),
                       child: CustomCard(
+                        isbutton: true,
+                        isIconButton: true,
                         isGrid: true,
                         subTitle: e.category,
                         time: "${e.duration} min",
