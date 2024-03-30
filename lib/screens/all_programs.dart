@@ -8,6 +8,7 @@ class AllPrograms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -33,7 +34,7 @@ class AllPrograms extends StatelessWidget {
             final programs = snapshot.data!;
             return GridView.count(
               childAspectRatio: 7.5 / 10,
-              crossAxisCount: 2,
+              crossAxisCount: size.width > 500 ? 6 : 2,
               crossAxisSpacing: 16,
               children: programs
                   .map(

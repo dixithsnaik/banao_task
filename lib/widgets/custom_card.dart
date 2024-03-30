@@ -41,8 +41,8 @@ class CustomCard extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/img1.png',
-            fit: BoxFit.cover,
-            width: 245,
+            fit: BoxFit.fitWidth,
+            width: isGrid ? null : 245,
           ),
           const SizedBox(
             height: 16,
