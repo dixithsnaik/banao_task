@@ -1,6 +1,10 @@
+import 'package:banao_task1/screens/all_lessons.dart';
+import 'package:banao_task1/screens/all_programs.dart';
 import 'package:banao_task1/widgets/custom_card.dart';
 import 'package:banao_task1/widgets/custom_appbar.dart';
 import 'package:banao_task1/widgets/custom_button.dart';
+import 'package:banao_task1/widgets/lesson_for_you.dart';
+import 'package:banao_task1/widgets/programs_for_you.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -110,60 +114,38 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              'View all',
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(
-                                  color: Color(0XFF6D747A),
-                                  fontSize: 12,
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const AllPrograms();
+                                },
+                              ),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                'View all',
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color(0XFF6D747A),
+                                    fontSize: 12,
+                                  ),
                                 ),
                               ),
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.arrow_forward))
-                          ],
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.arrow_forward))
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
                   //card list
-                  const SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        bottom: 24,
-                        right: 10,
-                        left: 16,
-                      ),
-                      child: Row(
-                        children: [
-                          CustomCard(
-                            isbutton: false,
-                            imageUrl: 'assets/images/img1.png',
-                            subTitle: 'Lifestyle',
-                            title: 'A complete guide for your new born baby',
-                            time: '16 lessons',
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          CustomCard(
-                            isbutton: false,
-                            imageUrl: 'assets/images/img2.png',
-                            subTitle: 'Working Parents',
-                            title: 'Understanding of human behaviour',
-                            time: '12 lessons',
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  const ProgramsForYou(),
                 ],
               ),
               const SizedBox(
@@ -228,24 +210,16 @@ class HomePage extends StatelessWidget {
                           CustomCard(
                             isbutton: true,
                             isIconButton: false,
-                            imageUrl: 'assets/images/img3.png',
                             subTitle: 'Babycare',
                             title: 'Understanding of human behaviour',
                             time: '13 Feb, Sunday',
-                          ),
-                          SizedBox(
-                            width: 16,
                           ),
                           CustomCard(
                             isbutton: true,
                             isIconButton: false,
-                            imageUrl: 'assets/images/img3.png',
                             subTitle: 'Babycare',
                             title: 'Understanding of human behaviour',
                             time: '13 Feb, Sunday',
-                          ),
-                          SizedBox(
-                            width: 16,
                           ),
                         ],
                       ),
@@ -283,58 +257,38 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              'View all',
-                              style: GoogleFonts.inter(
-                                textStyle: const TextStyle(
-                                  color: Color(0XFF6D747A),
-                                  fontSize: 12,
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const AllLessons();
+                                },
+                              ),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                'View all',
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color(0XFF6D747A),
+                                    fontSize: 12,
+                                  ),
                                 ),
                               ),
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.arrow_forward))
-                          ],
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.arrow_forward))
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
                   //card list
-                  const SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 16, bottom: 6),
-                      child: Row(
-                        children: [
-                          CustomCard(
-                            isbutton: true,
-                            isIconButton: true,
-                            imageUrl: 'assets/images/img3.png',
-                            subTitle: 'Babycare',
-                            title: 'Understanding of human behaviour',
-                            time: '3 min',
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          CustomCard(
-                            isbutton: true,
-                            isIconButton: true,
-                            imageUrl: 'assets/images/img3.png',
-                            subTitle: 'Babycare',
-                            title: 'Understanding of human behaviour',
-                            time: '1 min ',
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  const LessonForYou(),
                 ],
               ),
               const SizedBox(

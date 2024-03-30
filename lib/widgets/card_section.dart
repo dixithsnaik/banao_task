@@ -62,7 +62,6 @@ class CardSection extends StatelessWidget {
               children: [
                 CustomCard(
                   isbutton: false,
-                  imageUrl: 'assets/images/img1.png',
                   subTitle: 'Lifestyle',
                   title: 'A complete guide for your new born baby',
                   time: '16 lessons',
@@ -72,7 +71,6 @@ class CardSection extends StatelessWidget {
                 ),
                 CustomCard(
                   isbutton: false,
-                  imageUrl: 'assets/images/img2.png',
                   subTitle: 'Working Parents',
                   title: 'Understanding of human behaviour',
                   time: '12 lessons',

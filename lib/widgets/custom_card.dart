@@ -5,23 +5,25 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomCard extends StatelessWidget {
   final String title;
   final String subTitle;
-  final String imageUrl;
+  final bool isGrid;
   final String time;
   final bool isbutton;
   final bool isIconButton;
 
-  const CustomCard(
-      {super.key,
-      required this.imageUrl,
-      required this.subTitle,
-      required this.time,
-      required this.title,
-      this.isbutton = false,
-      this.isIconButton = false});
+  const CustomCard({
+    super.key,
+    required this.subTitle,
+    required this.time,
+    required this.title,
+    this.isbutton = false,
+    this.isIconButton = false,
+    this.isGrid = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(right: isGrid ? 0 : 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Colors.white,
@@ -32,13 +34,13 @@ class CustomCard extends StatelessWidget {
           ),
         ],
       ),
-      width: 245,
+      width: isGrid ? null : 245,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset(
-            imageUrl,
+            'assets/images/img1.png',
             fit: BoxFit.cover,
             width: 245,
           ),
@@ -65,6 +67,8 @@ class CustomCard extends StatelessWidget {
                 ),
                 Text(
                   title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.inter(
                     textStyle: const TextStyle(
                       color: Color(0XFF000000),
